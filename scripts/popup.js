@@ -23,23 +23,30 @@ class NepaliCalendarPopup {
         this.renderCalendar();
     }
 
-    loadSettings() {
-        chrome.storage.sync.get(['language', 'theme', 'showHolidays'], (result) => {
+    async loadSettings() {
+        try {
+            const result = await browserAPI.storage.sync.get(['language', 'theme', 'showHolidays']);
             this.language = result.language || 'en';
             this.theme = result.theme || 'light';
             this.showHolidays = result.showHolidays !== false;
             
             this.applyTheme();
             this.updateLanguageElements();
-        });
+        } catch (error) {
+            console.error('Error loading settings:', error);
+        }
     }
 
-    saveSettings() {
-        chrome.storage.sync.set({
-            language: this.language,
-            theme: this.theme,
-            showHolidays: this.showHolidays
-        });
+    async saveSettings() {
+        try {
+            await browserAPI.storage.sync.set({
+                language: this.language,
+                theme: this.theme,
+                showHolidays: this.showHolidays
+            });
+        } catch (error) {
+            console.error('Error saving settings:', error);
+        }
     }
 
     setupEventListeners() {

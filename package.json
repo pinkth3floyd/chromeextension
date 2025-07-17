@@ -1,0 +1,33 @@
+{
+  "name": "nepali-calendar-extension",
+  "version": "1.0.0",
+  "description": "A beautiful Nepali calendar extension with Bikram Sambat dates, holidays, and events",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:chrome": "node build.js chrome",
+    "build:firefox": "node build.js firefox",
+    "clean": "rm -rf build/ *.zip"
+  },
+  "keywords": [
+    "nepali",
+    "calendar",
+    "bikram-sambat",
+    "chrome-extension",
+    "firefox-addon",
+    "date-converter"
+  ],
+  "author": "Prakash Niraula",
+  "license": "MIT",
+  "devDependencies": {
+    "archiver": "^6.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/nepali-calendar-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/nepali-calendar-extension/issues"
+  },
+  "homepage": "https://github.com/yourusername/nepali-calendar-extension#readme"
+}
