@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepali Calendar</title>
+    <link rel="stylesheet" href="styles/popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">नेपाली पात्रो</h1>
+                <p class="subtitle">Nepali Calendar</p>
+            </div>
+            <div class="flag-container">
+                <div class="nepal-flag">
+                    <div class="flag-triangle"></div>
+                    <div class="flag-border"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="date-display">
+            <div class="gregorian-date">
+                <span id="gregorian-date">Loading...</span>
+            </div>
+            <div class="nepali-date">
+                <span id="nepali-date">Loading...</span>
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button id="prev-month" class="nav-btn">‹</button>
+                <h2 id="current-month-year">Baisakh 2080</h2>
+                <button id="next-month" class="nav-btn">›</button>
+            </div>
+
+            <div class="weekdays">
+                <div class="weekday">आइत</div>
+                <div class="weekday">सोम</div>
+                <div class="weekday">मंगल</div>
+                <div class="weekday">बुध</div>
+                <div class="weekday">बिहि</div>
+                <div class="weekday">शुक्र</div>
+                <div class="weekday">शनि</div>
+            </div>
+
+            <div id="calendar-grid" class="calendar-grid">
+                <!-- Calendar days will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="holiday-info">
+            <h3>Today's Events</h3>
+            <div id="holiday-list" class="holiday-list">
+                <!-- Holiday information will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <span class="footer-text">Bikram Sambat</span>
+                <button id="settings-btn" class="settings-btn">⚙️</button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <label for="language-select">Language:</label>
+                    <select id="language-select">
+                        <option value="en">English</option>
+                        <option value="ne">नेपाली</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="theme-select">Theme:</label>
+                    <select id="theme-select">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="show-holidays"> Show Holidays
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/nepali-calendar.js"></script>
+    <script src="scripts/popup.js"></script>
+</body>
+</html> 
