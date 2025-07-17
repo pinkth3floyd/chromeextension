@@ -3,11 +3,15 @@
 class NepaliCalendarPopup {
     constructor() {
         this.calendar = new NepaliCalendar();
-        this.currentYear = 2080;
-        this.currentMonth = 1;
+        // Get current Nepali date and set it as the initial view
+        const currentNepaliDate = this.calendar.getCurrentNepaliDate();
+        this.currentYear = currentNepaliDate.year;
+        this.currentMonth = currentNepaliDate.month;
         this.language = 'en';
         this.theme = 'light';
         this.showHolidays = true;
+        
+
         
         this.init();
     }

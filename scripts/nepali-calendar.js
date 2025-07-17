@@ -16,11 +16,14 @@ class NepaliCalendar {
         this.weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         this.weekdaysNepali = ['आइतबार', 'सोमबार', 'मंगलबार', 'बुधबार', 'बिहिबार', 'शुक्रबार', 'शनिबार'];
 
+        // Base date: 1 Shrawan 2082 BS = 17 July 2025 AD
+        this.baseDate = new Date(2025, 6, 17); // July 17, 2025
+        this.baseNepaliDate = { year: 2082, month: 4, day: 1 };
+
         // Nepali calendar data (BS year -> days in each month)
+        // Official data for 2082 from Nepali Patro
         this.nepaliCalendarData = {
-            2080: [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 30],
-            2081: [31, 31, 31, 32, 31, 30, 30, 29, 30, 29, 30, 30],
-            2082: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
+            2082: [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31],
             2083: [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31],
             2084: [31, 31, 31, 32, 31, 30, 30, 29, 30, 29, 30, 30],
             2085: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
@@ -28,7 +31,9 @@ class NepaliCalendar {
             2087: [31, 31, 31, 32, 31, 30, 30, 29, 30, 29, 30, 30],
             2088: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
             2089: [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31],
-            2090: [31, 31, 31, 32, 31, 30, 30, 29, 30, 29, 30, 30]
+            2090: [31, 31, 31, 32, 31, 30, 30, 29, 30, 29, 30, 30],
+            2091: [31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30],
+            2092: [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31]
         };
 
         // Nepali holidays data (month-day -> holiday name)
@@ -48,17 +53,15 @@ class NepaliCalendar {
             '11-15': { en: 'Holi', ne: 'होली' },
             '12-15': { en: 'Ram Navami', ne: 'राम नवमी' }
         };
-
-        // Base date: 1 Baisakh 2080 BS = 13 April 2023 AD
-        this.baseDate = new Date(2023, 3, 13); // April 13, 2023
-        this.baseNepaliDate = { year: 2080, month: 1, day: 1 };
     }
 
     // Convert Gregorian date to Nepali date
     gregorianToNepali(gregorianDate) {
         const date = new Date(gregorianDate);
-        const diffTime = date.getTime() - this.baseDate.getTime();
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        // Use UTC to avoid timezone issues
+        const utc1 = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+        const utc2 = Date.UTC(this.baseDate.getFullYear(), this.baseDate.getMonth(), this.baseDate.getDate());
+        const diffDays = Math.floor((utc1 - utc2) / (1000 * 60 * 60 * 24));
 
         let nepaliYear = this.baseNepaliDate.year;
         let nepaliMonth = this.baseNepaliDate.month;

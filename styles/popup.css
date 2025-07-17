@@ -4,12 +4,20 @@
     box-sizing: border-box;
 }
 
+html
+{
+    width: 600px; 
+    height: 600px; 
+
+}
+
+
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #333;
-    width: 520px;
-    min-height: 700px;
+    width: 600px;
+    min-height: 600px;
     overflow-x: hidden;
 }
 
@@ -24,7 +32,7 @@ body {
 .header {
     background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
     color: white;
-    padding: 15px 20px;
+    padding: 20px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,14 +57,14 @@ body {
 }
 
 .title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 4px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-    font-size: 12px;
+    font-size: 14px;
     opacity: 0.9;
     font-weight: 300;
 }
@@ -100,35 +108,35 @@ body {
 
 /* Date Display */
 .date-display {
-    padding: 15px 20px;
+    padding: 20px 25px;
     background: #f8f9fa;
     text-align: center;
     border-bottom: 1px solid #e9ecef;
 }
 
 .gregorian-date {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #495057;
     margin-bottom: 8px;
 }
 
 .nepali-date {
-    font-size: 13px;
+    font-size: 14px;
     color: #6c757d;
     font-weight: 500;
 }
 
 /* Calendar Container */
 .calendar-container {
-    padding: 20px;
+    padding: 25px;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .nav-btn {
@@ -136,9 +144,9 @@ body {
     color: white;
     border: none;
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -152,7 +160,7 @@ body {
 }
 
 #current-month-year {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #333;
 }
@@ -161,24 +169,24 @@ body {
 .weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    margin-bottom: 12px;
+    gap: 6px;
+    margin-bottom: 15px;
 }
 
 .weekday {
     text-align: center;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     color: #6c757d;
-    padding: 8px 4px;
+    padding: 10px 6px;
 }
 
 /* Calendar Grid */
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    margin-bottom: 8px;
+    gap: 6px;
+    margin-bottom: 10px;
 }
 
 .calendar-day {
@@ -186,13 +194,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    min-height: 28px;
+    min-height: 35px;
 }
 
 .calendar-day:hover {
@@ -228,27 +236,27 @@ body {
 
 /* Holiday Info */
 .holiday-info {
-    padding: 15px 20px;
+    padding: 20px 25px;
     background: #f8f9fa;
     border-top: 1px solid #e9ecef;
 }
 
 .holiday-info h3 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .holiday-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .holiday-item {
     background: white;
-    padding: 12px;
+    padding: 15px;
     border-radius: 8px;
     border-left: 4px solid #ff6b6b;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -258,17 +266,17 @@ body {
     font-weight: 600;
     color: #333;
     margin-bottom: 4px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .holiday-date {
-    font-size: 11px;
+    font-size: 12px;
     color: #6c757d;
 }
 
 /* Footer */
 .footer {
-    padding: 12px 20px;
+    padding: 15px 25px;
     background: #343a40;
     color: white;
 }
@@ -280,7 +288,7 @@ body {
 }
 
 .footer-text {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
 }
 
